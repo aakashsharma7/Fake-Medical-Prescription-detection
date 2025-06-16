@@ -17,7 +17,7 @@ db = mongo_client['medauth']
 pg_conn = None
 try:
     # Use direct connection string from environment variable
-    pg_conn = psycopg2.connect(os.getenv('DATABASE_URL', 'postgresql://workflow_builder_user:bBDZVRGyfaweYg4kCa8pahjbeIyZPNcY@dpg-d12qvvje5dus73cnkou0-a/workflow_builder'))
+    pg_conn = psycopg2.connect(os.getenv('DATABASE_URL'))
 except psycopg2.OperationalError as e:
     print(f"Warning: Could not connect to PostgreSQL: {e}")
     print("The application will continue with MongoDB only.")
